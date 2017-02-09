@@ -21,7 +21,7 @@ def diary(request, month):
         diaries = Diary.objects.filter(time__year=time_year, time__month=time_month).order_by("-id")
         return render_to_response('diary.html', {'diaries': diaries, 'month':month}, context_instance=RequestContext(request))
 
-@login_required      
+@login_required
 def diary_add(request):
         if request.method == 'POST':
                 form = DiaryForm(request.POST)
@@ -72,12 +72,11 @@ def diary_word(request, month):
         response['Content-Length'] = length
 
         return response      
-
 @login_required
 def home(request):
         months = Month.objects.all().order_by("-id")
         return render_to_response('home.html', {'months': months}, context_instance=RequestContext(request))
-    
+
 @login_required
 def money(request, month):
         time_year = int(month)/100
@@ -102,7 +101,7 @@ def money_add(request):
         else:
                 form = MoneyForm()
         return render_to_response('form.html',{'form': form}, context_instance=RequestContext(request))
-      
+
 @login_required
 def money_excel(request, month):
         time_year = int(month)/100

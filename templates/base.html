@@ -1,77 +1,95 @@
 <!DOCTYPE html>
 <!--
-Template Name: Ostenien
+Template Name: Gomag
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
 Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
 -->
-<html>
+<html lang="">
 <head>
-<title>我的隨身秘書</title>
+<title>我的隨身祕書</title>
 <meta charset="utf-8">
-<m<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="/static/css/layout.css" rel="stylesheet" type="text/css" media="all">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
-<body>
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row0">
-  <header id="header" class="hoc clear"> 
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-image:url('../images/demo/backgrounds/01.png');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../index.html">我的隨身祕書</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+{% if user.is_authenticated %}
+      <li><a href="/home">首頁</a></li>
+      <li><a href="/diary/add">寫日誌</a></li>
+      <li><a href="/money/add">記帳</a></li>
+      <li><a href="/logout">登出</a></li>
+{% endif %}
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <section id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <div id="logo">
-      <h1><a href="/home">我的隨身秘書</a></h1>
-      <i class="fa fa-ra"></i>
-      <p>Diary & Money</p>
-    </div>
+    <h6 class="heading">Full Width</h6>
     <!-- ################################################################################################ -->
-  </header>
-</div>
-<div class="wrapper row1">
-  {% if user.is_authenticated %}   
-  <nav id="mainav" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <ul class="clear">
-        <li><a href="/home">首頁</a></li>
-        <li><a href="/diary/add">寫日誌</a></li>
-        <li><a href="/money/add">記帳</a></li>
-        <li><a href="/logout">登出</a></li>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Lorem</a></li>
+      <li><a href="#">Ipsum</a></li>
+      <li><a href="#">Dolor</a></li>
     </ul>
     <!-- ################################################################################################ -->
-  </nav>
-  {% endif %}  
+  </section>
+  <!-- ################################################################################################ -->
 </div>
-    <!-- ################################################################################################ -->
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="group">
-      <h3>
-     {% block content %}
-     {% endblock %}        
-      </h3>
-
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      {% block content %}
+        {% endblock %}
     </div>
     <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
+  </footer>
 </div>
-
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-<div class="wrapper row6">
-  <div id="copyright" class="clear"> 
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - 網站開發：高慧君</p>
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>
 </div>
-<script src="/static/js/jquery.min.js"></script> 
-<script src="/static/js/jquery.mobilemenu.js"></script>  
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
